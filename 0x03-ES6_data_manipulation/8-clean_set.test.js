@@ -14,3 +14,4 @@ describe('cleanSet', () => {
     expect(cleanSet(set, '')).toBe('');
   });
 });
+
