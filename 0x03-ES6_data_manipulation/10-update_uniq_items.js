@@ -1,3 +1,5 @@
+// 10-update_uniq_items.js
+
 /**
  * Updates the quantity of items in a map where initial quantity is 1 to 100.
  * @param {Map} map The map of items with their quantities
@@ -9,21 +11,13 @@ function updateUniqueItems(map) {
     throw new Error('Cannot process');
   }
 
-  const updatedMap = new Map();
-
   // Iterate over the entries of the map
   for (const [item, quantity] of map.entries()) {
     // If the quantity is 1, update it to 100
-    const updatedQuantity = quantity === 1 ? 100 : quantity;
-    updatedMap.set(item, updatedQuantity);
+    if (quantity === 1) {
+      map.set(item, 100);
+    }
   }
-
-  // Replace the original map with the updated one
-  map.clear();
-  updatedMap.forEach((value, key) => {
-    map.set(key, value);
-  });
 }
 
 export default updateUniqueItems;
-
