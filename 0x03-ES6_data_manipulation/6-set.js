@@ -1,8 +1,3 @@
-// 6-set.js
-
-function setFromArray(array) {
-  return new Set(array);
+export default function setFromArray(arr) {
+  return new Set(arr);
 }
-
-export default setFromArray;
-
